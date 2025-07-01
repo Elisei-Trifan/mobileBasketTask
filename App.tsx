@@ -19,12 +19,12 @@ import {
 } from 'react-native';
 
 import {SignInScreen} from './src/screens/SignInScreen';
+import {SignUpScreen} from './src/screens/SignUpScreen';
 
 const App = () => {
   return (
-    // <Text>
-    <SignInScreen />
-    // </Text>
+    // <SignInScreen />
+    <SignUpScreen />
   );
 };
 

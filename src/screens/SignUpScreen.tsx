@@ -2,16 +2,20 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {InputField} from '../components/InputField';
 import {ButtonCustom} from '../components/ButtonCustom';
+import {CheckboxCustom} from '../components/CheckboxCustom';
 
-export const SignInScreen = () => {
+export const SignUpScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.textSignIn}>Sign In</Text>
+      <Text style={styles.textSignIn}>Sign Up</Text>
+      <InputField label={'Name'} />
       <InputField label={'Login'} />
       <InputField label={'Password'} />
-      <ButtonCustom title={'Sign In'} />
+      <InputField label={'Enter your password again'} />
+      <CheckboxCustom text={'I accept the agreement'} />
+      <ButtonCustom title={'Sign Up'} />
       <Text style={styles.textHelp}>
-        Not a member yet? <Text style={styles.textLink}>Sign Up</Text>
+        Already a member? <Text style={styles.textLink}>Sign In</Text>
       </Text>
     </View>
   );
