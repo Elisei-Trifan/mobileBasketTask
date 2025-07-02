@@ -2,8 +2,8 @@ import {Navigation} from 'react-native-navigation';
 import {SignInScreen} from './src/screens/SignInScreen';
 import {SignUpScreen} from './src/screens/SignUpScreen';
 
-Navigation.registerComponent('SignIn', () => SignInScreen);
-Navigation.registerComponent('SignUp', () => SignUpScreen);
+Navigation.registerComponent('signIn', () => SignInScreen);
+Navigation.registerComponent('signUp', () => SignUpScreen);
 
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
@@ -13,7 +13,7 @@ Navigation.events().registerAppLaunchedListener(() => {
         children: [
           {
             component: {
-              name: 'SignIn',
+              name: 'signIn',
             },
           },
         ],

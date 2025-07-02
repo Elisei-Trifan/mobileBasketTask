@@ -7049,6 +7049,11 @@ react-devtools-core@4.24.0:
     shell-quote "^1.6.1"
     ws "^7"
 
+react-hook-form@^7.34.0:
+  version "7.34.0"
+  resolved "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.34.0.tgz"
+  integrity sha512-s0/TJ09NVlEk2JPp3yit1WnMuPNBXFmUKEQPulgDi9pYBw/ZmmAFHe6AXWq73Y+kp8ye4OcMf0Jv+i/qLPektg==
+
 "react-is@^16.12.0 || ^17.0.0 || ^18.0.0", react-is@^18.0.0:
   version "18.3.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-18.3.1.tgz"
@@ -7179,7 +7184,7 @@ react-test-renderer@18.0.0:
     react-shallow-renderer "^16.13.1"
     scheduler "^0.21.0"
 
-react@*, "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", react@^18.0.0, react@18.0.0:
+react@*, "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17 || ^18", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0", react@^18.0.0, react@18.0.0:
   version "18.0.0"
   resolved "https://registry.npmjs.org/react/-/react-18.0.0.tgz"
   integrity sha512-x+VL6wbT4JRVPm7EGxXhZ8w8LTROaxPXOqhlGyVSrv0sB1jkyFGgXxJ8LVoPRLvPR6/CIZGFmfzqUa2NYeMr2A==
