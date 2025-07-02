@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Pressable, PressableProps, StyleSheet, Text, View} from 'react-native';
+import {colors} from '../theme/colors';
 
-interface CheckboxCustomProps {
+interface CheckboxCustomProps extends PressableProps {
   text?: string;
 }
 
@@ -26,7 +27,7 @@ export const CheckboxCustom: React.FC<CheckboxCustomProps> = ({text}) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: 320,
+    width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 24,
@@ -35,21 +36,21 @@ const styles = StyleSheet.create({
     width: 18,
     height: 18,
     borderWidth: 1,
-    borderColor: '#9C9C9C',
+    borderColor: colors.lightGrey,
     borderRadius: 2,
     marginRight: 8,
     alignItems: 'center',
     justifyContent: 'center',
   },
   checked: {
-    backgroundColor: '#E4163A',
-    borderColor: '#E4163A',
+    backgroundColor: colors.red,
+    borderColor: colors.red,
   },
   isError: {
-    borderColor: '#E4163A',
+    borderColor: colors.red,
   },
   checkmark: {
-    color: '#fff',
+    color: colors.white,
     fontSize: 14,
     fontWeight: '800',
   },
@@ -57,6 +58,6 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 24,
     fontWeight: '500',
-    color: '#707070',
+    color: colors.grey,
   },
 });

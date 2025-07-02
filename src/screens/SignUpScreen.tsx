@@ -3,15 +3,16 @@ import {StyleSheet, Text, View} from 'react-native';
 import {InputField} from '../components/InputField';
 import {ButtonCustom} from '../components/ButtonCustom';
 import {CheckboxCustom} from '../components/CheckboxCustom';
+import {colors} from '../theme/colors';
 
-export const SignUpScreen = () => {
+export const SignUpScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.textSignIn}>Sign Up</Text>
       <InputField label={'Name'} />
       <InputField label={'Login'} />
-      <InputField label={'Password'} />
-      <InputField label={'Enter your password again'} />
+      <InputField label={'Password'} secure />
+      <InputField label={'Enter your password again'} secure />
       <CheckboxCustom text={'I accept the agreement'} />
       <ButtonCustom title={'Sign Up'} />
       <Text style={styles.textHelp}>
@@ -26,20 +27,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 24,
   },
   textSignIn: {
     fontSize: 36,
     fontWeight: '400',
-    color: '#344472',
+    color: colors.blue,
     marginBottom: 32,
   },
   textHelp: {
     marginTop: 24,
   },
   textLink: {
-    color: '#E4163A',
+    color: colors.red,
     textDecorationStyle: 'solid',
-    textDecorationColor: '#E4163A',
+    textDecorationColor: colors.red,
     textDecorationLine: 'underline',
   },
 });

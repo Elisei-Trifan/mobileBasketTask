@@ -1,29 +1,25 @@
 import React from 'react';
-import {
-  Button,
-  ButtonProps,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
+import {Pressable, StyleSheet, Text, PressableProps} from 'react-native';
+import {colors} from '../theme/colors';
 
-interface ButtonCustomProps extends ButtonProps {
+interface ButtonCustomProps extends PressableProps {
   title: string;
 }
 
 export const ButtonCustom: React.FC<ButtonCustomProps> = ({title}) => {
   return (
-    <TouchableOpacity style={styles.button}>
+    <Pressable style={styles.button}>
       <Text style={styles.text}>{title}</Text>
-    </TouchableOpacity>
+    </Pressable>
   );
 };
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: '#E4163A',
-    width: 320,
+    backgroundColor: colors.red,
+    width: '100%',
     height: 40,
+    marginHorizontal: 40,
     borderRadius: 4,
     alignItems: 'center',
     justifyContent: 'center',
