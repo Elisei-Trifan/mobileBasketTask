@@ -1,17 +1,19 @@
 import {Navigation} from 'react-native-navigation';
+import {SignInScreen} from './src/screens/SignInScreen';
+import {SignUpScreen} from './src/screens/SignUpScreen';
 
-import App from './App';
-
-Navigation.registerComponent('com.myApp.WelcomeScreen', () => App);
+Navigation.registerComponent('SignIn', () => SignInScreen);
+Navigation.registerComponent('SignUp', () => SignUpScreen);
 
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
     root: {
       stack: {
+        id: 'AUTH_STACK',
         children: [
           {
             component: {
-              name: 'com.myApp.WelcomeScreen',
+              name: 'SignIn',
             },
           },
         ],

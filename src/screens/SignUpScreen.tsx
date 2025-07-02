@@ -4,8 +4,10 @@ import {InputField} from '../components/InputField';
 import {ButtonCustom} from '../components/ButtonCustom';
 import {CheckboxCustom} from '../components/CheckboxCustom';
 import {colors} from '../theme/colors';
+import {NavigationFunctionComponent} from 'react-native-navigation';
+import {goToScreen} from '../utils/goToScreen';
 
-export const SignUpScreen: React.FC = () => {
+export const SignUpScreen: NavigationFunctionComponent = ({componentId}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.textSignIn}>Sign Up</Text>
@@ -16,7 +18,12 @@ export const SignUpScreen: React.FC = () => {
       <CheckboxCustom text={'I accept the agreement'} />
       <ButtonCustom title={'Sign Up'} />
       <Text style={styles.textHelp}>
-        Already a member? <Text style={styles.textLink}>Sign In</Text>
+        Already a member?{' '}
+        <Text
+          style={styles.textLink}
+          onPress={() => goToScreen(componentId, 'SignIn')}>
+          Sign In
+        </Text>
       </Text>
     </View>
   );

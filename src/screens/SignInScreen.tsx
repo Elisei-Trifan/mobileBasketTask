@@ -2,8 +2,11 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {InputField} from '../components/InputField';
 import {ButtonCustom} from '../components/ButtonCustom';
+import {colors} from '../theme/colors';
+import {NavigationFunctionComponent} from 'react-native-navigation';
+import {goToScreen} from '../utils/goToScreen';
 
-export const SignInScreen: React.FC = () => {
+export const SignInScreen: NavigationFunctionComponent = ({componentId}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.textSignIn}>Sign In</Text>
@@ -11,7 +14,12 @@ export const SignInScreen: React.FC = () => {
       <InputField label={'Password'} secure />
       <ButtonCustom title={'Sign In'} />
       <Text style={styles.textHelp}>
-        Not a member yet? <Text style={styles.textLink}>Sign Up</Text>
+        Not a member yet?{' '}
+        <Text
+          style={styles.textLink}
+          onPress={() => goToScreen(componentId, 'SignUp')}>
+          Sign Up
+        </Text>
       </Text>
     </View>
   );
@@ -22,20 +30,21 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    paddingHorizontal: 24,
   },
   textSignIn: {
     fontSize: 36,
     fontWeight: '400',
-    color: '#344472',
+    color: colors.blue,
     marginBottom: 32,
   },
   textHelp: {
     marginTop: 24,
   },
   textLink: {
-    color: '#E4163A',
+    color: colors.red,
     textDecorationStyle: 'solid',
-    textDecorationColor: '#E4163A',
+    textDecorationColor: colors.red,
     textDecorationLine: 'underline',
   },
 });
