@@ -5,7 +5,7 @@ import {ButtonCustom} from '../components/ButtonCustom';
 import {colors} from '../theme/colors';
 import {NavigationFunctionComponent} from 'react-native-navigation';
 import {goToScreen} from '../utils/goToScreen';
-import {screens} from '../navigation/typeScreens';
+import {Screens} from '../navigation/typeScreens';
 
 export const SignInScreen: NavigationFunctionComponent = ({componentId}) => {
   return (
@@ -18,7 +18,7 @@ export const SignInScreen: NavigationFunctionComponent = ({componentId}) => {
         Not a member yet?{' '}
         <Text
           style={styles.textLink}
-          onPress={() => goToScreen(componentId, screens.signUp)}>
+          onPress={() => goToScreen(componentId, Screens.signUp)}>
           Sign Up
         </Text>
       </Text>

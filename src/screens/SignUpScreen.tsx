@@ -6,7 +6,7 @@ import {CheckboxCustom} from '../components/CheckboxCustom';
 import {colors} from '../theme/colors';
 import {NavigationFunctionComponent} from 'react-native-navigation';
 import {goToScreen} from '../utils/goToScreen';
-import {screens} from '../navigation/typeScreens';
+import {Screens} from '../navigation/typeScreens';
 
 export const SignUpScreen: NavigationFunctionComponent = ({componentId}) => {
   return (
@@ -22,7 +22,7 @@ export const SignUpScreen: NavigationFunctionComponent = ({componentId}) => {
         Already a member?{' '}
         <Text
           style={styles.textLink}
-          onPress={() => goToScreen(componentId, screens.signIn)}>
+          onPress={() => goToScreen(componentId, Screens.signIn)}>
           Sign In
         </Text>
       </Text>

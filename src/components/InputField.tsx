@@ -16,14 +16,18 @@ interface InputFieldProps extends TextInputProps {
   secure?: boolean;
 }
 
-export const InputField: React.FC<InputFieldProps> = ({label, secure}) => {
-  const [hide, setHide] = useState(true);
+export const InputField: React.FC<InputFieldProps> = ({
+  label,
+  secure,
+  ...rest
+}) => {
+  const [hide, setHide] = useState(secure);
 
   return (
     <View style={styles.wrapper}>
       <Text style={styles.label}>{label}</Text>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} secureTextEntry={hide} />
+        <TextInput style={styles.input} secureTextEntry={hide} {...rest} />
 
         {secure && (
           <Pressable

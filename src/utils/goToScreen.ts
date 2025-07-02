@@ -1,8 +1,8 @@
 import {Navigation} from 'react-native-navigation';
-import {ScreenName} from '../navigation/typeScreens';
+import {Screens} from '../navigation/typeScreens';
 
-export const goToScreen = (componentId: string, screen: ScreenName) => {
-  Navigation.setStackRoot(componentId, {
+export const goToScreen = (componentId: string, screen: Screens) => {
+  Navigation.push(componentId, {
     component: {
       name: screen,
       options: {

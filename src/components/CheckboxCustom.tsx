@@ -6,12 +6,18 @@ interface CheckboxCustomProps extends PressableProps {
   text?: string;
 }
 
-export const CheckboxCustom: React.FC<CheckboxCustomProps> = ({text}) => {
+export const CheckboxCustom: React.FC<CheckboxCustomProps> = ({
+  text,
+  ...rest
+}) => {
   const [checked, setChecked] = useState(false);
   const [isError, setIsError] = useState(false);
 
   return (
-    <Pressable style={styles.container} onPress={() => setChecked(!checked)}>
+    <Pressable
+      style={styles.container}
+      onPress={() => setChecked(!checked)}
+      {...rest}>
       <View
         style={[
           styles.checkbox,

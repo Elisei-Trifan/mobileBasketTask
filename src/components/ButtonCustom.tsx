@@ -6,9 +6,9 @@ interface ButtonCustomProps extends PressableProps {
   title: string;
 }
 
-export const ButtonCustom: React.FC<ButtonCustomProps> = ({title}) => {
+export const ButtonCustom: React.FC<ButtonCustomProps> = ({title, ...rest}) => {
   return (
-    <Pressable style={styles.button}>
+    <Pressable style={styles.button} {...rest}>
       <Text style={styles.text}>{title}</Text>
     </Pressable>
   );
