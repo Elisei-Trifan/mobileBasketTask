@@ -3,11 +3,11 @@ import {StyleSheet, Text, View} from 'react-native';
 import {InputField} from '../components/InputField';
 import {ButtonCustom} from '../components/ButtonCustom';
 import {colors} from '../theme/colors';
-import {NavigationFunctionComponent} from 'react-native-navigation';
-import {goToScreen} from '../utils/goToScreen';
-import {Screens} from '../navigation/typeScreens';
+interface SignInScreenProps {
+  setIndex: (index: number) => void;
+}
 
-export const SignInScreen: NavigationFunctionComponent = ({componentId}) => {
+export const SignInScreen: React.FC<SignInScreenProps> = ({setIndex}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.textSignIn}>Sign In</Text>
@@ -16,9 +16,7 @@ export const SignInScreen: NavigationFunctionComponent = ({componentId}) => {
       <ButtonCustom title={'Sign In'} />
       <Text style={styles.textHelp}>
         Not a member yet?{' '}
-        <Text
-          style={styles.textLink}
-          onPress={() => goToScreen(componentId, Screens.signUp)}>
+        <Text style={styles.textLink} onPress={() => setIndex(1)}>
           Sign Up
         </Text>
       </Text>
