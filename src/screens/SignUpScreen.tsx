@@ -4,12 +4,18 @@ import {InputField} from '../components/InputField';
 import {ButtonCustom} from '../components/ButtonCustom';
 import {CheckboxCustom} from '../components/CheckboxCustom';
 import {colors} from '../theme/colors';
+import {goToScreen} from '../utils/goToScreen';
+import {Screens} from '../navigation/typeScreens';
 
 interface SignUpScreenProps {
   setIndex: (index: number) => void;
+  componentId: string;
 }
 
-export const SignUpScreen: React.FC<SignUpScreenProps> = ({setIndex}) => {
+export const SignUpScreen: React.FC<SignUpScreenProps> = ({
+  setIndex,
+  componentId,
+}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.textSignIn}>Sign Up</Text>
@@ -18,7 +24,10 @@ export const SignUpScreen: React.FC<SignUpScreenProps> = ({setIndex}) => {
       <InputField label={'Password'} secure />
       <InputField label={'Enter your password again'} secure />
       <CheckboxCustom text={'I accept the agreement'} />
-      <ButtonCustom title={'Sign Up'} />
+      <ButtonCustom
+        title={'Sign Up'}
+        onPress={() => goToScreen(componentId, Screens.main)}
+      />
       <Text style={styles.textHelp}>
         Already a member?{' '}
         <Text style={styles.textLink} onPress={() => setIndex(0)}>

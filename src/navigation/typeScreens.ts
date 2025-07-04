@@ -1,4 +1,4 @@
 export enum Screens {
-  signIn = 'signIn',
-  signUp = 'signUp',
+  authTabs = 'authTabs',
+  main = 'mainScreen',
 }

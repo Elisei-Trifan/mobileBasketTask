@@ -1,5 +1,6 @@
 import {Navigation} from 'react-native-navigation';
 import {registerScreens} from './src/navigation/registerScreens';
+import {Screens} from './src/navigation/typeScreens';
 
 registerScreens();
 
@@ -11,7 +12,7 @@ Navigation.events().registerAppLaunchedListener(() => {
         children: [
           {
             component: {
-              name: 'AuthTabs',
+              name: Screens.authTabs,
             },
           },
         ],
