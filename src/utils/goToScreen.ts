@@ -8,7 +8,8 @@ export const goToScreen = (componentId: string, screen: Screens) => {
       options: {
         topBar: {
           backButton: {
-            visible: false,
+            visible: true,
+            title: 'Назад',
           },
         },
       },
